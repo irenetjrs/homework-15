@@ -1,9 +1,10 @@
 *{
+   margin: 0px;
+   padding: 0;
    box-sizing: border-box;
 }
 body{
    font-family: 'Roboto', sans-serif;
-   margin: 0px;
 }
 @font-face {
    font-family: 'Sofia';
@@ -65,6 +66,54 @@ body{
    a.number::before{
       content: url(/src/img/phone.svg);
    }
+   .burger-menu {
+      display: block;
+      width: 20px;
+      height: 15px;
+      position: relative;
+      background: transparent;
+      border: none;
+   }
+   .burger-menu span,
+   .burger-menu::before,
+   .burger-menu::after {
+      content: "";
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: black;
+   }
+   .burger-menu::before {
+      top: 0;
+      transition-duration: 0.2s;
+   }
+   .burger-menu::after {
+      bottom: 0;
+      transition-duration: 0.2s;
+   }
+   .burger-menu span {
+      top: calc(50% - 1px);
+   }
+   .burger-menu:focus::before {
+      top: calc(50% - 1px);
+      transform: rotate(-45deg);
+      background-color: #46b1de;
+   }
+   .burger-menu:focus:after {
+      top: calc(50% - 1px);
+      transform: rotate(45deg);
+      background-color: #46b1de;
+   }
+   .burger-menu:focus span {
+      width: 0;
+   }
+   
+   .burger-menu:hover span,
+   .burger-menu:hover::before,
+   .burger-menu:hover::after{
+      background-color: #46b1de;
+   }
    main {
       position:relative;
       margin-left: 18px;
@@ -104,6 +153,24 @@ body{
       background: linear-gradient(97.59deg, #46B1DE 9.8%, #0591CC 95.1%);
       box-shadow: 0px 2px 10px #46B1DE;
       border-radius: 8px;
+   }
+   .main-title {
+      font-weight: 700;
+      line-height: 130%;
+      letter-spacing: 0.1em;
+      animation-name: display-main-section;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+   }
+   @keyframes display-main-section {
+   0% {
+      margin-top: 150px;
+      opacity: 0.5;
+      }
+      100% {
+      margin-top: 0px;
+      opacity: 1;
+      }
    }
    .services{
       display: flex;
@@ -231,6 +298,7 @@ body{
    }
    .circle{
       display: none;
+      margin: 0 auto ;
    }
    div.circle img{
       margin: 79px 70px 79px 70px;
@@ -538,6 +606,7 @@ body{
    span.language::after{
       content: "|";
    }
+
    main{
       margin-left: 110px;
       margin-right: 110px;
@@ -618,16 +687,16 @@ body{
       display: flex;
       gap: 70px;
       align-content: center;
-      margin-left: 100px;
-      margin-right: 210px;
+      margin-left: 10%;
+      margin-right: 20%;
       margin-top: 54px;
-      max-width: 1150px;
+      /* max-width: 1150px; */
       height: 97px;
    }
    .footer-boxes{
       display: flex;
       flex-direction: row;
-      width: 280px;
+      width: 380px;
       height: 120px;
       background: #FFFFFF;
       border: 1px solid #D8E1E1;
@@ -635,12 +704,31 @@ body{
       border-radius: 8px;
       position: relative;
       z-index: 1;
+      position: relative;
+      animation-name: display-boxes-section;
+      animation-duration: 1.3s;
+      animation-timing-function: ease-in-out;
+   }
+   @keyframes display-boxes-section {
+      0% {
+      margin-left: 50px;
+      opacity: 0;
+   }
+   50% {
+      margin-left: 50px;
+      opacity: 0;
+   }
+
+   100% {
+      margin-left: 130px;
+      opacity: 1;
+   }
    }
    .number-15{
       display: flex;
       align-items: center;
       color: #46b1de;
-      font-size: 50px;
+      font-size: 40px;
       margin: 15px;
    }
    .text-15{
@@ -724,10 +812,13 @@ body{
       margin: 10px;
       height: 75px;
    }
+   div.circles{
+      height: 500px;
+   }
    .circle-box{
-      position: relative;
-      max-width: 1400;
-      height: 470px;
+      max-width: 950px;
+      height: 300px;
+      margin: 0px auto 30px auto;
    }
    .circle-text{
       max-width: 380px;
@@ -737,11 +828,18 @@ body{
       text-align: left;
       white-space: pre-line;
    }
+   .circles{
+      animation-name: animation-ellipses;
+      animation-duration: 0.5s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-delay: 5s;
+   }
    .circle{
       display: block;
       position: absolute;
       top: 50px;
-      left: 540px;
+      left: 30%;
       width: 320px;
       height: 320px;
       border: #000000 1px solid;
@@ -749,38 +847,38 @@ body{
    }
    .c-1{
       position: absolute;
-      top: 20px;
-      left: 160px;
       text-align: right;
+      top: 15px;
+      left: -90px;
    }
    .c-2{
       position: absolute;
       top: 160px;
-      left: 120px;
+      left: -120px;
       text-align: right;
    }
    .c-3{
       position: absolute;
       top: 300px;
-      left: 180px;
+      left: -80px;
       text-align: right;
    }
    .c-4{
       position: absolute;
-      top: 20px;
-      right: 160px;
+      top: 15px;
+      right: -30px;
       text-align: left;
    }
    .c-5{
       position: absolute;
       top: 160px;
-      right: 120px;
+      right: -60px;
       text-align: left;
    }
    .c-6{
       position: absolute;
       top: 300px;
-      right: 180px;
+      right: -40px;
       text-align: left;
    }
    div.circle img{
@@ -800,33 +898,57 @@ body{
    .e-1{
       position: absolute;
       top: 80px;
-      left: 580px;
+      left: 330px;
    }
    .e-2{
       position: absolute;
       top: 190px;
-      left: 530px;
+      left: 270px;
    }
    .e-3{
       position: absolute;
       top: 310px;
-      left: 580px;
+      left: 330px;
    }
    .e-4{
       position: absolute;
       top: 80px;
-      right: 580px;
+      right: 380px;
    }
    .e-5{
       position: absolute;
       top: 190px;
-      right: 530px;
+      right: 330px;
    }
    .e-6{
       position: absolute;
       top: 310px;
-      right: 580px;
+      right: 370px;
    }
+
+   @keyframes animation-ellipses-item {
+      from {
+         width: 0;
+         height: 0;
+      }
+
+      to {
+         width: 530px;
+         height: 530px;
+      }
+      }
+
+      @keyframes animation-ellipses {
+      from {
+         width: 0px;
+         height: 0px;
+      }
+
+      to {
+        width: 600px;
+        height: 400px;
+      }
+    }
    .attention{
       max-width: 600px;
       margin: 0 auto;
@@ -841,6 +963,9 @@ body{
       color: #46B1DE;
       padding-top: 50px;
       padding-left: 16px;
+      }
+      div.attention{
+         margin-top: 50px;
       }
    .outside-box{
       max-width: 845px;
